@@ -52,7 +52,7 @@
                       <%= link_to "about", url_for(action: 'about', controller: 'welcome') %>
                   </li>
                   <li>
-                      <a href="post.html">Sample Post</a>
+                      <%= link_to "Sample Post", url_for(action: 'index', controller: 'articles') %>
                   </li>
                   <li>
                       <a href="contact.html">Contact</a>
@@ -82,6 +82,10 @@
   </header>
 
   <div class="container">
+	<div class="row">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+	</div>
     <div class="row">
       <%= yield %>
     </div>
