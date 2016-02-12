@@ -14,4 +14,4 @@
  *= require_self
  */
 *= require bootstrap_and_overrides
-*= require clean_blog
+*= require blog-home
