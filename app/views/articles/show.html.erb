@@ -1,2 +1,15 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="row">
+	<div class="col-lg-8">
+		<h1><%= @article.title%></h1>
+		<p class="lead">by <%=@article.user.email%></p>
+		<hr>
+		<p>
+			<span class="glyphicon glyphicon-time"></span>
+			 Posted on <%=@article.created_at%>
+		</p>
+		
+		<p class="lead"><%= @article.body%></p>
+	</div>
+	<div class="col-lg-4">
+	</div>
+</div>
