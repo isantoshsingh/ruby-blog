@@ -9,6 +9,9 @@
 		</p>
 		
 		<p class="lead"><%= raw @article.body%></p>
+		<%if user_signed_in? && current_user.id == @article.user_id%>
+		<p><%= link_to 'Edit', edit_article_path(@article) %></p>
+		<%end%>
 	</div>
 	<div class="col-lg-4">
 		<%= link_to 'Back', articles_path %>
