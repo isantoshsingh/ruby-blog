@@ -8,8 +8,9 @@
 			 Posted on <%=@article.created_at%>
 		</p>
 		
-		<p class="lead"><%= @article.body%></p>
+		<p class="lead"><%= raw @article.body%></p>
 	</div>
 	<div class="col-lg-4">
+		<%= link_to 'Back', articles_path %>
 	</div>
 </div>
