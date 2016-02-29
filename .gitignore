@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 /nbproject/private/
+.DS_Store

@@ -13,7 +13,10 @@
 			 Posted on <%= a.created_at%>
 		</p>
 		
-		<p class="lead"><%= raw a.body%></p>
+		<!--p class="lead"><%= truncate(a.body, length: 250, :escape => false){link_to "read more", article_path(a) }%></p-->
+		
+		<!--p class="lead"><%= raw a.body.truncate(200)%></p-->
+		<p class="lead"><%= truncate_html(a.body, length: 250, omission: '...')%></p>
 		
 		<%if user_signed_in? && current_user.id == a.user_id%>
 		<p><%= link_to 'Edit', edit_article_path(a) %></p>
