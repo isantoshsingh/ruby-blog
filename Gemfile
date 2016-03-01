@@ -27,8 +27,10 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'truncate_html', '~> 0.9.3'
-
-gem 'devise', '~> 3.5', '>= 3.5.6'
+#slug
+gem 'friendly_id'
+#login/register
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
