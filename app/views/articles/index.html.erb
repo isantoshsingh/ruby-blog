@@ -6,16 +6,13 @@
 <div class="row">
 	<div class="col-lg-12">
 		<h1><%=link_to a.title, article_path(a)%></h1>
-		<p class="lead">by <%= a.user.email%></p>
+		<p class="lead">by <%= link_to a.user.email, user_articles_url(a.user_id)%></p>
 		<hr>
 		<p>
 			<span class="glyphicon glyphicon-time"></span>
 			 Posted on <%= a.created_at%>
 		</p>
 		
-		<!--p class="lead"><%= truncate(a.body, length: 250, :escape => false){link_to "read more", article_path(a) }%></p-->
-		
-		<!--p class="lead"><%= raw a.body.truncate(200)%></p-->
 		<p class="lead"><%= truncate_html(a.body, length: 250, omission: '...')%></p>
 		
 		<%if user_signed_in? && current_user.id == a.user_id%>
