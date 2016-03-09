@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-lg-8">
+	<div class="col-sm-8">
 <% unless @articles.nil?%>		
 <% @articles.each do |a|%>
 
@@ -28,6 +28,20 @@
 </p>
 <% end %>
 </div>
-	<div class="col-lg-4">
+	<div class="col-sm-3 col-sm-offset-1">
+		<div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+			<% for row in @search.facet(:publish_month).rows %>
+				<li>
+				<% if params[:month].blank? %>
+					<%= link_to row.value, :month => row.value %> (<%= row.count %>)
+			  	<% else %>
+					<strong><%= row.value %></strong> (<%= link_to "remove", :month => nil %>)
+			  <% end %>
+			  </li>
+			 <% end %>
+            </ol>
+          </div>
 	</div>
 </div>

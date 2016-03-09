@@ -2,7 +2,13 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @search = Article.search do
+      fulltext params[:search]
+      facet(:publish_month)
+      with(:publish_month, params[:month]) if params[:month].present?
+      order_by :created_at, :desc
+    end
+    @articles = @search.results
   end
 
   def new
